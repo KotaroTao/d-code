@@ -517,18 +517,12 @@ export default function LpPage() {
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
               {/* Photo */}
               <div className="flex-shrink-0">
-                <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-gray-200 overflow-hidden shadow-lg">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-brand-100 overflow-hidden shadow-lg flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/instructor-tao.jpg"
                     alt="田尾耕太郎"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      if (target.parentElement) {
-                        target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-brand-100"><span class="text-6xl font-black text-brand-400">T</span></div>';
-                      }
-                    }}
                   />
                 </div>
               </div>
