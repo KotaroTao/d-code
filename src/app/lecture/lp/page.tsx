@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "D-Code Academy｜歯科医院のためのバイブコーディング講座",
   description:
-    "プログラミング未経験の歯科医師・スタッフが、AIと一緒に5日間で自院専用アプリを作る。Claude Code実践講座。2025年6月開講。",
+    "プログラミング未経験の歯科医師・スタッフが、AIと一緒に5日間で自院専用アプリを作る。Claude Code実践講座。2026年6月開講。",
 };
 
 /* ═══════════════════════════════════════════
@@ -95,7 +95,7 @@ export default function LpPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/80 border border-brand-200 rounded-full px-4 py-1.5 mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse-soft" />
-              <span className="text-sm font-semibold text-surface-900">2025年6月 第1期生 募集中</span>
+              <span className="text-sm font-semibold text-surface-900">2026年6月 第1期生 募集中</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.15] tracking-tight mb-6">
@@ -300,7 +300,7 @@ export default function LpPage() {
             {[
               {
                 day: "Day 1",
-                date: "6/8（日）",
+                date: "6/7（日）",
                 title: "はじめてのWEBサイト公開",
                 desc: "自己紹介サイトを作ってインターネットに公開。GitHub・Vercelの初期設定もこの日に完了。",
                 tag: "HTML / CSS / デプロイ",
@@ -308,7 +308,7 @@ export default function LpPage() {
               },
               {
                 day: "Day 2",
-                date: "6/15（日）",
+                date: "6/14（日）",
                 title: "AIへの指示の出し方 & インタラクティブアプリ",
                 desc: "プロンプトエンジニアリングを学び、ToDoアプリを開発。CLAUDE.mdの設定方法も習得。",
                 tag: "React / Next.js / プロンプト設計",
@@ -316,7 +316,7 @@ export default function LpPage() {
               },
               {
                 day: "Day 3",
-                date: "6/22（日）",
+                date: "6/21（日）",
                 title: "WEB問診票アプリ開発",
                 desc: "データベース連携を学び、歯科医院向けWEB問診票を作成。患者データの保存・閲覧まで。",
                 tag: "Supabase / データベース / 認証",
@@ -324,7 +324,7 @@ export default function LpPage() {
               },
               {
                 day: "Day 4",
-                date: "7/6（日）",
+                date: "7/5（日）",
                 title: "自院オリジナルアプリ開発",
                 desc: "自分の医院が抱える課題を解決するオリジナルアプリを企画・開発。講師が1人ずつサポート。",
                 tag: "企画 / 設計 / 実装",
@@ -332,7 +332,7 @@ export default function LpPage() {
               },
               {
                 day: "Day 5",
-                date: "7/13（日）",
+                date: "7/12（日）",
                 title: "仕上げ & 成果発表会",
                 desc: "UI改善・独自ドメイン設定で本番レベルに仕上げ。受講生全員で成果を発表し合います。",
                 tag: "UI/UX / ドメイン / 発表",
@@ -651,7 +651,7 @@ export default function LpPage() {
               <tbody>
                 {[
                   { label: "講座名", value: "D-Code Academy 第1期" },
-                  { label: "日程", value: "2025年 6/8（日）、6/15（日）、6/22（日）、7/6（日）、7/13（日）" },
+                  { label: "日程", value: "2026年 6/7（日）、6/14（日）、6/21（日）、7/5（日）、7/12（日）" },
                   { label: "時間", value: "各回 10:00〜13:00（50分×3ブロック、休憩10分×2回）" },
                   { label: "形式", value: "Zoomによる完全オンライン開催（自宅から受講可能）" },
                   { label: "対象", value: "歯科医院の院長・スタッフ（プログラミング経験不要）" },
@@ -884,7 +884,7 @@ export default function LpPage() {
             株式会社ファンクション・ティ ／ 一般社団法人 日本歯科啓発・推進機構（JDAPO）
           </p>
           <p className="text-gray-500 text-xs">
-            &copy; 2025 Function-T Inc. All rights reserved.
+            &copy; 2026 Function-T Inc. All rights reserved.
           </p>
         </div>
       </footer>
