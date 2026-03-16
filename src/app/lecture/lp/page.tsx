@@ -567,9 +567,10 @@ export default function LpPage() {
                 </div>
 
                 <p className="text-sm text-gray-600 leading-relaxed mb-5">
-                  歯科医師として臨床に立ちながら独学でプログラミングを習得し、国内最大級の歯科情報サイト「歯チャンネル」を構築。
-                  総カルテ数15,000超のアライナー専用患者管理ツール「マウスピースの達人」など、歯科業界に特化したシステムを多数開発。
-                  さらに月間500万PVのメディア運営で培った<strong className="text-surface-900">マーケティングの知見</strong>も持ち合わせます。
+                  歯科医師として臨床に立ちながら独学でプログラミングを習得し、国内最大級の歯科情報サイト「歯チャンネル」（月間500万PV超）を構築。
+                  カルテ数15,000超のアライナー矯正専用WEB管理システムなど、歯科業界に特化したシステムを多数開発。
+                  現在はClaude Codeをフル活用し、<strong className="text-surface-900">開発速度10倍・コスト約1/10</strong>を実現。
+                  さらに500万PVメディア運営で培った<strong className="text-surface-900">マーケティングの知見</strong>で、アプリの集患・ブランディングまで指導します。
                 </p>
 
                 <div className="bg-white/80 rounded-xl p-4 border border-brand-100">
@@ -632,10 +633,10 @@ export default function LpPage() {
               <p className="text-sm text-gray-600 mb-3">その他のClub特典</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-left">
                 {[
-                  "月1回の勉強会・Q&Aセッション",
-                  "Club限定の新アプリ早期アクセス",
-                  "D-Code認定医院バッジ",
-                  "卒業生コミュニティへの参加",
+                  "Claude Codeに関する相談サポート",
+                  "メンバーの成果物共有・フィードバック",
+                  "月1回の勉強会・メンバー限定イベント",
+                  "D-Code Store 出品権",
                 ].map((t) => (
                   <div key={t} className="flex items-center gap-2">
                     <svg className="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -646,6 +647,78 @@ export default function LpPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── D-Code エコシステム ─── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-14">
+            <SectionLabel>D-Code Ecosystem</SectionLabel>
+            <SectionTitle>
+              学ぶ、つながる、届ける。
+              <br />
+              <span className="gradient-text">卒業後も続く</span>3つのステップ
+            </SectionTitle>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  step: "STEP 1",
+                  name: "Academy",
+                  tagline: "学ぶ",
+                  desc: "5日間でAIアプリ開発スキルを習得。ブラウザだけで自院専用アプリを作り上げる。",
+                  color: "from-brand-500 to-brand-600",
+                  current: true,
+                },
+                {
+                  step: "STEP 2",
+                  name: "Club",
+                  tagline: "つながる",
+                  desc: "卒業生コミュニティで継続学習。Claude Codeの相談、成果物の共有、限定イベントに参加。",
+                  color: "from-purple-500 to-purple-600",
+                  current: false,
+                },
+                {
+                  step: "STEP 3",
+                  name: "Store",
+                  tagline: "届ける",
+                  desc: "自分が作ったアプリを全国の歯科医院に販売。開発スキルが収益に変わる。",
+                  color: "from-accent-400 to-accent-500",
+                  current: false,
+                },
+              ].map((item, i) => (
+                <div key={item.name} className="relative">
+                  <div className={`rounded-2xl p-6 border h-full ${item.current ? "bg-brand-50 border-brand-200" : "bg-gray-50 border-gray-100"}`}>
+                    <div className={`inline-block text-white text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r ${item.color} mb-4`}>
+                      {item.step}
+                    </div>
+                    <h3 className="text-xl font-black text-surface-900 mb-1">D-Code {item.name}</h3>
+                    <p className="text-sm font-semibold text-brand-600 mb-3">{item.tagline}</p>
+                    <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                    {item.current && (
+                      <div className="mt-4 text-xs font-bold text-brand-600 bg-brand-100 rounded-full px-3 py-1 inline-block">
+                        ← いまここ
+                      </div>
+                    )}
+                  </div>
+                  {i < 2 && (
+                    <div className="hidden md:flex absolute top-1/2 -right-4 w-8 h-8 items-center justify-center text-gray-300 z-10">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-sm text-gray-400 mt-8">
+              Academy卒業後は D-Code Club（月額¥10,000・初年度無料）で継続サポート。スキルが身についたらD-Code Storeでアプリ販売も可能です。
+            </p>
           </div>
         </div>
       </section>
