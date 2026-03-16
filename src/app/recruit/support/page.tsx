@@ -137,14 +137,22 @@ export default function RecruitSupportPage() {
             {/* 報酬 */}
             <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8">
               <h3 className="text-sm font-bold text-brand-400 uppercase tracking-wider mb-4">
-                報酬
+                報酬（1コホートあたり・税別）
               </h3>
-              <p className="text-3xl font-extrabold text-white mb-2">
-                ¥225,000<span className="text-lg text-gray-400 font-normal">（税別）/ 1コホート</span>
-              </p>
-              <p className="text-gray-400 text-sm">
-                時給換算 約¥5,000 / 合計約45時間（セミナー15h + サポート20h + 準備10h）
-              </p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">導入コース TA</p>
+                  <p className="text-2xl font-extrabold text-white">¥225,000<span className="text-sm text-gray-400 font-normal ml-2">約45h</span></p>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">本格運用コース TA</p>
+                  <p className="text-2xl font-extrabold text-white">¥275,000<span className="text-sm text-gray-400 font-normal ml-2">約50h</span></p>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">メイン講師</p>
+                  <p className="text-2xl font-extrabold text-white">¥400,000〜600,000<span className="text-sm text-gray-400 font-normal ml-2">約50-55h</span></p>
+                </div>
+              </div>
             </div>
 
             {/* 勤務形態 */}
@@ -212,26 +220,52 @@ export default function RecruitSupportPage() {
             講座で使用する技術
           </h2>
           <p className="text-gray-400 mb-10">
-            受講者はプログラミング未経験者です。Claude Codeに指示を出してアプリを作るスタイルなので、サポート講師に求められるのは「深い技術力」ではなく「各ツールの基本的な使い方の理解」です。
+            2つのコースがあり、それぞれ使用する技術が異なります。
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { name: "Claude Code", note: "WEB版を使用" },
-              { name: "Next.js / React", note: "App Router" },
-              { name: "Tailwind CSS", note: "v4" },
-              { name: "Vercel", note: "デプロイ先" },
-              { name: "Supabase", note: "DB / 認証" },
-              { name: "GitHub", note: "ソース管理" },
-            ].map((tech) => (
-              <div
-                key={tech.name}
-                className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 text-center"
-              >
-                <p className="text-white font-bold">{tech.name}</p>
-                <p className="text-gray-500 text-xs mt-1">{tech.note}</p>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-white font-bold mb-4">導入コース（Vercel）</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { name: "Claude Code", note: "WEB版を使用" },
+                  { name: "Next.js / React", note: "App Router" },
+                  { name: "Tailwind CSS", note: "v4" },
+                  { name: "Vercel", note: "デプロイ先" },
+                  { name: "Supabase", note: "DB / 認証" },
+                  { name: "GitHub", note: "ソース管理" },
+                ].map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 text-center"
+                  >
+                    <p className="text-white font-bold">{tech.name}</p>
+                    <p className="text-gray-500 text-xs mt-1">{tech.note}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div>
+              <h3 className="text-white font-bold mb-4">本格運用コース（Google Cloud）</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { name: "Claude Code", note: "WEB版を使用" },
+                  { name: "Next.js / React", note: "App Router" },
+                  { name: "Cloud Run", note: "アプリ実行" },
+                  { name: "Cloud SQL", note: "データベース" },
+                  { name: "Firebase Auth", note: "認証" },
+                  { name: "Cloud Storage", note: "ファイル保存" },
+                ].map((tech) => (
+                  <div
+                    key={`gcp-${tech.name}`}
+                    className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 text-center"
+                  >
+                    <p className="text-white font-bold">{tech.name}</p>
+                    <p className="text-gray-500 text-xs mt-1">{tech.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -333,6 +367,35 @@ export default function RecruitSupportPage() {
                 placeholder="@username またはプロフィールURL"
                 className="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-5 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
               />
+            </div>
+
+            {/* 応募ポジション */}
+            <div>
+              <label className="block text-white font-bold mb-2">
+                応募ポジション <span className="text-red-400 text-sm">*必須</span>
+              </label>
+              <p className="text-gray-500 text-sm mb-3">希望するポジションを選択してください（複数選択可）</p>
+              <div className="space-y-3">
+                {[
+                  "導入コース（Vercel）サポート講師（TA）",
+                  "本格運用コース（Google Cloud）サポート講師（TA）",
+                  "本格運用コース（Google Cloud）メイン講師",
+                  "運営スタッフ",
+                  "どのポジションでも興味がある",
+                ].map((option) => (
+                  <label key={option} className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      name="position"
+                      value={option}
+                      className="w-4 h-4 accent-brand-500"
+                    />
+                    <span className="text-gray-300 group-hover:text-white transition-colors">
+                      {option}
+                    </span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             {/* Claude Codeの使用歴・頻度 */}
@@ -465,6 +528,100 @@ export default function RecruitSupportPage() {
                       (option) => (
                         <label key={`supabase-${option}`} className="flex items-center gap-3 cursor-pointer group">
                           <input type="radio" name="supabase_exp" value={option} required className="w-4 h-4 accent-brand-500" />
+                          <span className="text-gray-400 text-sm group-hover:text-white transition-colors">{option}</span>
+                        </label>
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Cloud の経験（本格運用コース志望者向け） */}
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+              <label className="block text-white font-bold mb-2">
+                Google Cloud の使用経験
+                <span className="text-gray-500 text-sm ml-2">本格運用コース志望者は回答推奨</span>
+              </label>
+              <p className="text-gray-500 text-sm mb-3">GCPの経験レベルを教えてください</p>
+              <div className="space-y-3 mb-6">
+                {[
+                  "実務で3年以上使用",
+                  "実務で1〜3年使用",
+                  "個人開発やハンズオンで使用",
+                  "ほぼ未経験",
+                ].map((option) => (
+                  <label key={option} className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="radio"
+                      name="gcp_exp"
+                      value={option}
+                      className="w-4 h-4 accent-brand-500"
+                    />
+                    <span className="text-gray-300 group-hover:text-white transition-colors">
+                      {option}
+                    </span>
+                  </label>
+                ))}
+              </div>
+
+              <label className="block text-white font-bold mb-2">
+                使用したことのあるGCPサービス
+                <span className="text-gray-500 text-sm ml-2">複数選択可</span>
+              </label>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {[
+                  "Cloud Run",
+                  "Cloud SQL",
+                  "Cloud Storage",
+                  "Firebase Auth / Firebase全般",
+                  "Cloud Functions",
+                  "Cloud Build",
+                  "Cloud Monitoring / Logging",
+                  "BigQuery",
+                ].map((service) => (
+                  <label key={service} className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      name="gcp_services"
+                      value={service}
+                      className="w-4 h-4 accent-brand-500"
+                    />
+                    <span className="text-gray-400 text-sm group-hover:text-white transition-colors">
+                      {service}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Docker / CI/CD の経験 */}
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+              <label className="block text-white font-bold mb-2">
+                Docker / CI/CD の経験
+                <span className="text-gray-500 text-sm ml-2">本格運用コース志望者は回答推奨</span>
+              </label>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-gray-300 font-medium mb-2">Docker</p>
+                  <div className="space-y-2">
+                    {["実務で使用中", "基本操作はできる", "概念は理解している", "未経験"].map(
+                      (option) => (
+                        <label key={`docker-${option}`} className="flex items-center gap-3 cursor-pointer group">
+                          <input type="radio" name="docker_exp" value={option} className="w-4 h-4 accent-brand-500" />
+                          <span className="text-gray-400 text-sm group-hover:text-white transition-colors">{option}</span>
+                        </label>
+                      )
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-gray-300 font-medium mb-2">CI/CD（GitHub Actions等）</p>
+                  <div className="space-y-2">
+                    {["パイプラインを構築した経験あり", "既存の設定を修正した程度", "概念は理解している", "未経験"].map(
+                      (option) => (
+                        <label key={`cicd-${option}`} className="flex items-center gap-3 cursor-pointer group">
+                          <input type="radio" name="cicd_exp" value={option} className="w-4 h-4 accent-brand-500" />
                           <span className="text-gray-400 text-sm group-hover:text-white transition-colors">{option}</span>
                         </label>
                       )
