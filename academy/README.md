@@ -156,6 +156,48 @@ Claude Code完全初心者向け講座プログラム
 | データベース | Supabase | データ保存・認証 |
 | スタイリング | Tailwind CSS | UIデザイン |
 
+## Supabase Freeプランの停止防止 & 復元ガイド
+
+### なぜ止まるのか
+Supabase Freeプランは **7日間非アクティブだとプロジェクトが自動停止** される。講座期間中は問題ないが、講座終了後に放置すると停止する。
+
+### 予防策：GitHub Actionsで自動ping（Day 3で全員設定）
+
+GitHubリポジトリに以下のワークフローを追加するだけで、3日おきに自動アクセスし停止を防げる。
+
+1. GitHubリポジトリの「Actions」タブを開く
+2. 「New workflow」→「set up a workflow yourself」を選択
+3. 以下の内容を貼り付けて「Commit changes」
+
+```yaml
+# .github/workflows/keep-supabase-alive.yml
+name: Keep Supabase Alive
+on:
+  schedule:
+    - cron: '0 0 */3 * *'  # 3日おきに実行
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: curl -s "${{ secrets.SUPABASE_URL }}/rest/v1/" -H "apikey:${{ secrets.SUPABASE_ANON_KEY }}"
+```
+
+4. リポジトリの Settings → Secrets and variables → Actions で以下を登録
+   - `SUPABASE_URL` : Supabaseプロジェクトの URL
+   - `SUPABASE_ANON_KEY` : Supabaseの anon public キー
+
+> **全てWEB上で完結** — GitHub Actionsの設定もGitHubのブラウザUI上で行うため、ローカル操作は一切不要。
+
+### 停止してしまった場合の復元手順
+
+| 状況 | 対処法 |
+|------|--------|
+| 停止から **90日以内** | [Supabase Dashboard](https://supabase.com/dashboard) → 該当プロジェクト → 「Restore」ボタンで即復元（データ消失なし） |
+| 停止から **90日超** | ダッシュボードからバックアップをダウンロード → 新プロジェクト作成 → 手動リストア |
+
+---
+
 ## 受講者が持参するもの
 
 - ノートPC（ブラウザが動けばOK。スペック不問）
