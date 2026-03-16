@@ -109,13 +109,11 @@ export default function LpPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-              AIに話しかけるだけでアプリが完成する時代。
+              講師は<strong className="text-surface-900">歯科医師・プログラマー・マーケター</strong>の三刀流。
               <br className="hidden md:block" />
-              歯科業界IT歴20年の講師が、
+              環境構築から開発、製品化、マーケティングまで
               <br className="hidden md:block" />
-              <strong className="text-surface-900">WEB問診票から自院オリジナルアプリまで</strong>、
-              <br className="hidden md:block" />
-              全てブラウザだけで作る方法を教えます。
+              <strong className="text-surface-900">最短最速でトータルサポート</strong>します。
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -433,6 +431,80 @@ export default function LpPage() {
         </div>
       </section>
 
+      {/* ─── 開発から製品化・マーケティングまで ─── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-14">
+            <SectionLabel>End-to-End Support</SectionLabel>
+            <SectionTitle>
+              作って終わりじゃない。
+              <br />
+              <span className="gradient-text">製品化・マーケティング</span>まで一気通貫
+            </SectionTitle>
+            <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+              他のプログラミング講座は「作り方」を教えて終わり。D-Code Academyは、開発後のビジネス展開まで見据えたサポート体制を整えています。
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {/* Flow */}
+            <div className="grid md:grid-cols-4 gap-4 mb-10">
+              {[
+                {
+                  step: "1",
+                  title: "環境構築",
+                  desc: "歯科業界に最適化された開発環境をブラウザだけで即日構築",
+                  icon: "🔧",
+                },
+                {
+                  step: "2",
+                  title: "アプリ開発",
+                  desc: "AIを使って自院の課題を解決するオリジナルアプリを開発",
+                  icon: "💻",
+                },
+                {
+                  step: "3",
+                  title: "製品化",
+                  desc: "作ったアプリを他院にも使えるプロダクトレベルに仕上げる",
+                  icon: "📦",
+                },
+                {
+                  step: "4",
+                  title: "マーケティング",
+                  desc: "D-Code Storeへの出品、集患施策への組み込みまで支援",
+                  icon: "📈",
+                },
+              ].map((item, i) => (
+                <div key={item.step} className="relative">
+                  <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 h-full text-center">
+                    <span className="text-3xl mb-3 block">{item.icon}</span>
+                    <div className="text-xs font-bold text-brand-500 mb-1">STEP {item.step}</div>
+                    <h3 className="font-bold text-surface-900 mb-2">{item.title}</h3>
+                    <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                  {i < 3 && (
+                    <div className="hidden md:flex absolute top-1/2 -right-3 w-6 h-6 items-center justify-center text-brand-300 z-10">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gradient-to-r from-brand-50 to-purple-50/50 rounded-2xl p-6 md:p-8 border border-brand-100 text-center">
+              <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                講師が<strong className="text-surface-900">歯科医師×プログラマー×マーケター</strong>だからこそ、
+                「どんなアプリが現場で求められるか」「どう作れば効率的か」「どう売れば広がるか」を全て一人で指導できます。
+                <br className="hidden md:block" />
+                開発スクールで学んだけどアプリが世に出なかった…ということがD-Code Academyでは起きません。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 講師紹介 ─── */}
       <section id="instructor" className="py-20 md:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -464,9 +536,22 @@ export default function LpPage() {
               {/* Profile */}
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-2xl md:text-3xl font-black text-surface-900 mb-1">田尾 耕太郎</h3>
-                <p className="text-sm text-brand-600 font-semibold mb-5">
-                  歯科医師 / プログラマー / 株式会社ファンクション・ティ 代表取締役
+                <p className="text-sm text-brand-600 font-semibold mb-3">
+                  株式会社ファンクション・ティ 代表取締役 / JDAPO 代表理事
                 </p>
+
+                {/* Triple Expertise Badges */}
+                <div className="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
+                  {[
+                    { label: "歯科医師", color: "bg-blue-50 text-blue-700 border-blue-200" },
+                    { label: "プログラマー", color: "bg-purple-50 text-purple-700 border-purple-200" },
+                    { label: "マーケター", color: "bg-amber-50 text-amber-700 border-amber-200" },
+                  ].map((badge) => (
+                    <span key={badge.label} className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${badge.color}`}>
+                      {badge.label}
+                    </span>
+                  ))}
+                </div>
 
                 <div className="space-y-2 text-sm text-gray-600 mb-6">
                   <div className="flex items-start gap-2 justify-center md:justify-start">
@@ -487,11 +572,20 @@ export default function LpPage() {
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed mb-5">
                   歯科医師として臨床に立ちながら独学でプログラミングを習得し、国内最大級の歯科情報サイト「歯チャンネル」を構築。
                   総カルテ数15,000超のアライナー専用患者管理ツール「マウスピースの達人」など、歯科業界に特化したシステムを多数開発。
-                  <strong className="text-surface-900">歯科×ITの第一人者</strong>として、20年にわたり歯科業界のデジタル変革を牽引しています。
+                  さらに月間500万PVのメディア運営で培った<strong className="text-surface-900">マーケティングの知見</strong>も持ち合わせます。
                 </p>
+
+                <div className="bg-white/80 rounded-xl p-4 border border-brand-100">
+                  <p className="text-sm font-bold text-surface-900 mb-1">なぜこの講師だから最短最速なのか？</p>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    歯科の現場課題を知り尽くした<strong>歯科医師</strong>が、自ら手を動かせる<strong>プログラマー</strong>として最適な環境を構築し、
+                    集患・ブランディングの実績を持つ<strong>マーケター</strong>として製品化後の成長戦略まで指導。
+                    この3つの専門性が1人に揃っているからこそ、他では実現できないスピードと質でサポートできます。
+                  </p>
+                </div>
               </div>
             </div>
           </div>
