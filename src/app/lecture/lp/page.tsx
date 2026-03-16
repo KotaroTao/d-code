@@ -265,6 +265,65 @@ export default function LpPage() {
         </div>
       </section>
 
+      {/* ─── なぜ Claude Code WEB版なのか ─── */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-14">
+            <SectionLabel>Why Claude Code Web</SectionLabel>
+            <SectionTitle>
+              本講座では
+              <span className="bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent"> Claude Code WEB版</span>
+              を使います
+            </SectionTitle>
+            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+              Claude Codeにはターミナル版・デスクトップ版・WEB版がありますが、
+              <br className="hidden md:block" />
+              歯科医院スタッフにはWEB版が圧倒的に最適です。
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+            {[
+              {
+                title: "いつでもどこでも開発",
+                desc: "ネットさえ繋がっていればOK。自宅でも医院でも移動中でも、ブラウザを開くだけで開発環境が整います。インストールや設定は一切不要。",
+                icon: (
+                  <svg className="w-7 h-7 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                  </svg>
+                ),
+              },
+              {
+                title: "指示したら放置でOK",
+                desc: "AIに指示を出したら、他の作業をしていても勝手に開発が進みます。診療の合間に指示を出して、休憩時間に確認するだけ。",
+                icon: (
+                  <svg className="w-7 h-7 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "本格的なシステムも構築可能",
+                desc: "「WEB版だから簡易的」ということは全くありません。講師の田尾は外注すると2,000万円規模のWEBシステムを1人で約1ヶ月で構築しています。",
+                icon: (
+                  <svg className="w-7 h-7 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-[#161b22] rounded-2xl p-7 border border-gray-700/50 text-center">
+                <div className="w-14 h-14 rounded-2xl bg-brand-500/10 flex items-center justify-center mx-auto mb-5">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── メリット ─── */}
       <section className="py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
